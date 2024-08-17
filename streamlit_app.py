@@ -1,5 +1,5 @@
 import streamlit as st
-
+import pandas as pd
 st.title("🎈 My new app")
 def main():
     uploaded_file = st.file_uploader("Choose an excel file")
@@ -8,7 +8,7 @@ def main():
             st.write(f"Uploaded file: {uploaded_file.name}, Type: {uploaded_file.type}")
             file_contents = uploaded_file.read()
             df = pd.read_excel(uploaded_file)
-            
+            df
         except Exception as e:
             st.error(f"Error processing file: {e}")
     st.write('File not uploaded')
